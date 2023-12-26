@@ -1,0 +1,55 @@
+<template>
+    <input
+        type="text"
+        class="edit-input"
+        :value="value"
+        @input="onInput"
+        @blur="onBlur"
+        @click="onClick"
+    />
+
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const props = defineProps({
+    value: {
+        type: String,
+        default: ''
+    },
+    setValue: {
+        type: Function,
+        default: () => {
+        }
+    }
+});
+
+const inputValue = ref(props.value);
+
+const onInput = (e) => {
+    inputValue.value = e.target.value.trim();
+};
+
+const onClick = (e) => {
+    e.stopPropagation();
+};
+
+const onBlur = () => {
+    props.setValue(inputValue.value);
+};
+</script>
+
+<style scoped lang="scss">
+.edit-input {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    text-align: center;
+    outline: none;
+}
+</style>
