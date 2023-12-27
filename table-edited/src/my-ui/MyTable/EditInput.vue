@@ -43,13 +43,14 @@ const onBlur = () => {
 <style scoped lang="scss">
 .edit-input {
     position: absolute;
-    top: 15%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 70%;
+    height: 100%;
     box-sizing: border-box;
     border: 1px solid orange;
     text-align: center;
     outline: none;
+    font-size: 16px;
 }
 </style>

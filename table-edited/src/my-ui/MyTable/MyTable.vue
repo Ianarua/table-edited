@@ -19,7 +19,7 @@
             <td
                 v-for="(value, key) in item"
                 :key="key"
-                @click.stop="showEditInput($event, key, index)"
+                @click.stop="showEditInput($event, key.toString(), index)"
             >
                 {{ value }}
             </td>
@@ -110,18 +110,18 @@ const checkEditable = (key: string) => {
     return editable;
 };
 
-window.addEventListener('click', () => removeEditInputApp, false);
+window.addEventListener('click', () => removeEditInputApp(), false);
 
 </script>
 
 <style scoped lang="scss">
 .my-table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
 }
 
 tr {
-    height: 44px;
+    height: 30px;
 
     td {
         position: relative;

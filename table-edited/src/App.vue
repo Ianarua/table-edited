@@ -77,7 +77,7 @@ const tableData: Ref<tableData> = ref({
  * @param key   是哪个值
  * @param value 新值
  * @param text  这个值的tHead的text
- * @param removeInput
+ * @param removeInput  移除input框的方法
  */
 const editData = ({index, key, value, text}: editDataArgs, removeInput: Function) => {
     if (tableData.value.tBody[index][key] != value) {
